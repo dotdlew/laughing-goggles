@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ["id", "category_id"],
+        attributes: ["id", "category_name"],
       },
       {
         model: Tag,
@@ -35,10 +35,11 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+
     include: [
       {
         model: Category,
-        attributes: ["id", "category_id"],
+        attributes: ["id", "category_name"],
       },
       {
         model: Tag,
@@ -48,7 +49,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbProductData) => {
       if (!dbProductData) {
-        res.status(404).json({ message: "no product found" });
+        res.status(404).json({ message: "No product found by this id." });
         return;
       }
       res.json(dbProductData);
@@ -142,7 +143,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbProductData) => {
       if (!dbProductData) {
-        res.status(404).json({ message: "no product found" });
+        res.status(404).json({ message: "No product found under this id." });
         return;
       }
       res.json(dbProductData);
