@@ -7,6 +7,8 @@ Build the back end for an e-commerce site. Take a working Express.js API and con
 # Author
 Daniel H. Lewis
 # Deployment
+Google Drive: https://drive.google.com/file/d/1DKhCvwvoKIghr1KCmvujdeNAYjBqshT_/view
+Demonstration: 
 
 # User Story
 AS A manager at an internet retail company
